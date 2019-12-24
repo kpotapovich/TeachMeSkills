@@ -1,0 +1,154 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+a{
+    color:#fff;
+    text-decoration: none;
+}
+.container{
+    width: 1100px;
+    margin: auto;
+    font-family: 'Raleway', sans-serif;
+}
+.header{
+    background-color: black;
+    padding: 16px 0;
+}
+.header_container {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    width: 100px;
+    height: 50px;
+
+}
+
+.menu{
+    color:#fff ;
+    margin: 0px;
+}
+
+.menu_item{
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.menu_item:last-child{
+    margin-right: 0;
+}
+
+.top{
+    background-color: black;
+}
+
+.description {
+    width: 500px;
+
+}
+
+.description_logo{
+    margin-bottom: 30px;
+    margin-top: 100px;
+}
+
+.description_title{
+    color: #fff;
+    font-size:36px ;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: 'Heebo', sans-serif;
+    display: inline-block;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 20px;
+}
+
+.description_text{
+    font-size: 16px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.430;
+    font-family: 'Raleway', sans-serif;
+}
+.description_button{
+    display: inline-block;
+    border: 2px solid #fff;
+    padding: 10px 25px;
+    font-size: 15px;
+    font-family: sans-serif;
+    color: #fff;
+    line-height: 1.2;
+
+}
+.top{
+    background-image: url("img/photo_2019.jpg");
+    background-position: center;
+    background-size: 100%;
+    height: 650px;
+    opacity: 1;
+}
+
+.top_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-form{
+    padding: 20px;
+    margin-top: 100px;
+    margin-left: 50px;
+
+}
+.top-form_title{
+    font-family: 'Heebo', sans-serif;
+   background-color: darkgray;
+    text-align: center;
+    padding: 12px 12px;
+    border-radius: 3px 3px 0 0;
+    margin:0 ;
+}
+.top-form_input{
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    width: 270px;
+    border: 0 solid #FFF;
+
+}
+.top-form_orange{
+    padding: 18px;
+    border: 0 solid #E58643;
+    border-radius: 0 0 3px 3px;
+    color: white;
+    background-color: #E58643;
+    width: 330px;
+
+}
+.common{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+}
+.solia_media{
+    display: flex;
+    flex-direction: column;
+}
+.head{
+    font-family: 'Heebo', sans-serif;
+}
+
+.text{
+    color: darkgray;
+}
+.icons img{
+    padding: 25px;
+
+
+
+
+}
+
+
