@@ -1,15 +1,14 @@
-.wrap{
-    margin-left: 100px;
-    height: 100px;
-    width: 100px;
-    color: green;
+.slider{
+    width: 320px;
 }
-.opacity{
-    height: 50px;
+
+.slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50px;
-    color: #000;
-    opacity: .5;
-}
-icon{
-    background-repeat: no-repeat;
+    height: 50px;
+    padding: 20px;
+    background-color: black;
+    color: #FFFFFF;
 }
