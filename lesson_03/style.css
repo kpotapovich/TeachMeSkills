@@ -1,0 +1,15 @@
+.wrap{
+    margin-left: 100px;
+    height: 100px;
+    width: 100px;
+    color: green;
+}
+.opacity{
+    height: 50px;
+    width: 50px;
+    color: #000;
+    opacity: .5;
+}
+icon{
+    background-repeat: no-repeat;
+}

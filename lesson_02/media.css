@@ -1,0 +1,124 @@
+@media (max-width: 1200px){
+    .container{
+        width: 960px;
+    }
+    .top-form{
+        width: 500px;
+    }
+    .top-form_title{
+        width: 306px;
+    }
+    .feature_container{
+        background-image: none ;
+    }
+}
+@media (max-width: 1024px) {
+    .container {
+        width: 720px;
+    }
+
+    .container_option{
+        width: 960px;
+    }
+    .contact_message,.contact_form{
+        width: 300px;
+
+    }
+    .menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 200px;
+        background-color: black;
+        padding: 75px 0 0 75px;
+        box-sizing: border-box;
+        transform: translateX(-100%);
+    }
+    .menu.visible{
+        transform: translateX(0);
+        transition: .3s;
+        display: block;
+    }
+    .bg {
+        background-color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        opacity:.5;
+        z-index: 998;
+        display: none;
+    }
+    .bg.visible{
+        display: block;
+    }
+
+    .burger {
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: relative;
+    }
+
+    .burger.cross .burger_line{
+        display: none;
+    }
+
+    .burger:before, .burger:after{
+        content: "";
+    }
+
+    .burger:before {
+        top: 0;
+    }
+
+    .burger:after{
+        bottom: 0;
+    }
+
+    .burger.cross:after{
+        transform: rotateZ(-45deg);
+        top: 50%;
+    }
+
+    .burger.cross:before{
+        transform: rotateZ(45deg);
+        top: 50%;
+    }
+
+    .burger_line {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .burger_line, .burger:before, .burger:after {
+        height: 3px;
+        width: 100%;
+        position: absolute;
+        background-color: #FFFFFF;
+        transition: all .3s;
+
+    }
+
+
+}
+@media (max-width: 900px) {
+    .container {
+        width: 540px;
+    }
+    .lorem_dolor{
+        margin: 10px;
+    }
+
+
+}
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+    }
+}
+

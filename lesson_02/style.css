@@ -11,16 +11,18 @@ a{
 .container{
     width: 1100px;
     margin: auto;
+    position: relative;
     font-family: 'Raleway', sans-serif;
 }
 
 .header{
     background-color: black;
     padding: 16px 0;
+    position: relative;
+    z-index: 999;
 }
 
 .header_container {
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -36,6 +38,7 @@ a{
     color:#fff ;
     margin: 0px;
 }
+
 
 .menu_item{
     display: inline-block;
@@ -120,6 +123,8 @@ a{
     padding: 12px 12px;
     border-radius: 3px 3px 0 0;
     margin:0 ;
+
+
 }
 
 .top-form_input{
@@ -131,26 +136,32 @@ a{
 
 }
 
-.top-form_orange{
+.top-form_orange {
     padding: 18px;
     border: 0 solid #E58643;
     border-radius: 0 0 3px 3px;
     color: white;
     background-color: #E58643;
     width: 330px;
-
 }
 
-.common{
+
+/*...........Solial Media.........*/
+
+.social{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     border-bottom: 1.5px solid #cbcbcb;
 }
 
-.solia_media{
+.container_title{
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.solia_media{
+
 }
 
 .head{
@@ -161,9 +172,91 @@ a{
     color: darkgray;
 }
 
-.icons img{
-   margin: 25px;
+.icons i{
+   margin: 20px;
+    color: #cacaca;
+    font-size: 40px;
 
+}
+
+.checkbox{
+    display: none;
+}
+
+/*.......container.......*/
+
+
+.feature{
+    background-color: #f5f5f5;
+    padding: 150px 0;
+
+
+}
+
+.checkbox:checked ~ .fake-checkbox{
+    background-color: #ff8b38;
+    border-radius: 3px 3px 0 0;
+
+
+}
+.checkbox:checked ~ .features_middle {
+    display: block;
+}
+
+.fake-checkbox{
+    height: 100px;
+    width: 100px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+    font-family: 'Cabin', sans-serif;
+    border-radius: 0 0 3px 3px;
+
+}
+
+.features_h2{
+    padding-bottom: 50px;
+    margin: 0;
+    font-family: 'Cabin', sans-serif;
+}
+
+.features_text{
+    margin-bottom: 20px;
+    color: #858689;
+    font-size: 15px;
+
+}
+
+.features_text .features_text_last{
+    margin-bottom: 45px;
+
+}
+
+.features_middle{
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    display: none;
+    transform: translateY(-50%);
+    margin-left: 100px;
+
+}
+
+.orange_button_small{
+    padding: 10px 20px;
+    color: #FFF;
+    background-color: #ff8b38;
+    border: 1px solid #ff8b38;
+    border-radius: 2px;
+}
+
+.feature_container {
+    background-image: url("img/building.png");
+    background-repeat: no-repeat;
+    background-position: center right;
 }
 
 .wrap{
@@ -179,9 +272,14 @@ a{
     font-size: 16px;
 }
 
+
+
+/*......why this is awesome.....*/
+
 .wrap-icons {
-    margin: 10px 100px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-bottom: 50px;
 }
 
@@ -197,7 +295,8 @@ a{
 .wrap-icons p{
     color: grey;
     font-family: 'Raleway', sans-serif;
-    padding: 20px;
+    font-size: 14px;
+    line-height: 1.4em;
 }
 
 .flex-center {
@@ -208,16 +307,31 @@ a{
     text-align: center;
 }
 
+.flex-center i{
+    color: #ff8b38;
+    font-size: 25px;
+    line-height: 2.5em;
+}
+
+.border_lightbuld{
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ff8b38;
+    border-radius: 100px;
+    text-align: center;
+}
+
+
+/*.....pricing options....... */
+.pricing_container{
+   background-color: #f5f5f5;
+}
+
 .container_option{
     background-color: #f5f5f5;
     padding-bottom: 100px;
     width: 1100px;
     margin: auto;
-
-
-
-
-
 }
 
 .caption{
@@ -226,9 +340,6 @@ a{
     align-items: center;
     margin-bottom: 30px;
     font-family: 'Raleway', sans-serif;
-
-
-
 }
 
 .mode_div{
@@ -240,8 +351,6 @@ a{
     font-size: 40px;
     margin-top: 100px;
     text-transform: uppercase;
-
-
 }
 
 .small_text{
@@ -262,7 +371,6 @@ a{
     border-bottom: 1px solid #FFFFFF;
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
-
 }
 
 .money{
@@ -291,14 +399,12 @@ a{
     background-color: #FFFFFF;
     padding: initial;
     width: 342px;
-
 }
 
 .col{
     padding: 15px;
     border-bottom: 1.5px solid #f5f5f5 ;
     color: #86878b;
-
 }
 
 .Most_popular {
@@ -308,13 +414,12 @@ a{
     font-weight: bold;
     padding: 15px;
     color: #FFFFFF;
-
 }
+
+/*...........what our customers are saying.........*/
 
 
 .lead_cot {
-    width: 1100px;
-    margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -378,6 +483,11 @@ p.lorem_dolor::after{
     display: flex;
 }
 
+
+
+/*......stylish axure desigh......*/
+
+
 .custom_section{
     background-image: url("img/custom_panel.png");
     height: 100%;
@@ -421,4 +531,93 @@ p.lorem_dolor::after{
     color: #fff;
     line-height: 1.2;
     margin-bottom: 40px;
+}
+
+
+
+/*..........contact us.........*/
+
+
+.contact_input{
+    margin-top: 100px;
+}
+.contact_flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact_form {
+    padding-bottom: 10px;
+    width: 490px;
+    outline: none;
+    margin: 20px;
+
+}
+.contact_message{
+    padding: 10px 0 137px 10px;
+    width: 490px;
+    outline: none;
+    margin-right: 20px;
+}
+
+
+input[type='text']{
+    border: none;
+}
+input[type="textarea"]{
+    border: none;
+}
+
+input[placeholder='Name']{
+    border-bottom: 1.5px solid #cdcdcd;
+}
+
+input[placeholder='Email']{
+    border-bottom: 1.5px solid #cdcdcd;
+}
+
+input[placeholder='Subject']{
+    border-bottom: 1.5px solid #cdcdcd;
+}
+
+input[placeholder='Message']{
+    border-bottom: 1.5px solid #cdcdcd;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button_message{
+    margin-top: 30px;
+    border: 2px solid orange;
+    background-color: orange;
+    color: #fff;
+    padding: 10px 25px;
+    font-size: 15px;
+
+}
+
+/* ..............fotter..........*/
+
+.footer{
+    background-color: #000000 ;
+}
+
+.icons_font{
+    padding: 50px;
+    color: #cacaca;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.icons_font i{
+    padding: 10px;
 }
