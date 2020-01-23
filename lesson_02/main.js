@@ -12,4 +12,11 @@ burger.addEventListener("click", function () {
         menu.classList.add("visible");
         bg.classList.add("visible");
     }
-})
+});
+$('.lead_cot').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    arrows: false,
+
+});
