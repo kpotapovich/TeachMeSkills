@@ -521,6 +521,23 @@ p.lorem_dolor::after{
     margin-bottom: 35px;
     color: #808080;
 }
+.cut_load{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    margin-bottom: 50px;
+}
+
+.cut_down{
+    position: relative;
+    width: 120px;
+    height: 40px;
+    perspective: 1000px;
+}
+
 
 .custom_button{
     display: inline-block;
@@ -530,8 +547,33 @@ p.lorem_dolor::after{
     font-family: sans-serif;
     color: #fff;
     line-height: 1.2;
-    margin-bottom: 40px;
+
+
 }
+
+.custom_back{
+    transform: rotateY(180deg);
+    border: 2px solid #ff8b38;
+    padding: 10px 42px;
+    font-size: 15px;
+    font-family: sans-serif;
+    color: #ff8b38;
+    line-height: 1.2;
+
+}
+.custom_button, .custom_back{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    backface-visibility: hidden;
+}
+
+.cut_down:hover .custom_button{transform: rotateY(180deg); }
+.cut_down:hover .custom_back{transform: rotateY(360deg); }
 
 
 
@@ -589,21 +631,57 @@ input[placeholder='Message']{
     align-items: flex-start;
 }
 
+
 .message{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    left: 0;
+    top: 0;
+    margin-bottom: 50px;
+}
+
+.send{
+    position: relative;
+    width: 160px;
+    height: 40px;
+    perspective: 1000px;
+
+
+}
+.button_message, .button_send{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    backface-visibility: hidden;
+
 }
 
 .button_message{
-    margin-top: 30px;
+
     border: 2px solid orange;
     background-color: orange;
     color: #fff;
-    padding: 10px 25px;
     font-size: 15px;
-
 }
+
+.button_send{
+    border: 2px solid #A61927;
+    background-color: #A61927;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+
+.send:hover .button_message{transform: rotateY(180deg); }
+.send:hover .button_send{transform: rotateY(360deg); }
 
 /* ..............fotter..........*/
 
