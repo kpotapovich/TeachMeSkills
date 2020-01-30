@@ -521,6 +521,7 @@ p.lorem_dolor::after{
     margin-bottom: 35px;
     color: #808080;
 }
+
 .cut_load{
 
     display: flex;
@@ -537,7 +538,6 @@ p.lorem_dolor::after{
     height: 40px;
     perspective: 1000px;
 }
-
 
 .custom_button{
     display: inline-block;
@@ -561,6 +561,7 @@ p.lorem_dolor::after{
     line-height: 1.2;
 
 }
+
 .custom_button, .custom_back{
     position: absolute;
     left: 0;
@@ -583,6 +584,7 @@ p.lorem_dolor::after{
 .contact_input{
     margin-top: 100px;
 }
+
 .contact_flex{
     display: flex;
     justify-content: space-between;
@@ -607,6 +609,7 @@ p.lorem_dolor::after{
 input[type='text']{
     border: none;
 }
+
 input[type="textarea"]{
     border: none;
 }
@@ -631,7 +634,6 @@ input[placeholder='Message']{
     align-items: flex-start;
 }
 
-
 .message{
     display: flex;
     justify-content: center;
@@ -649,6 +651,7 @@ input[placeholder='Message']{
 
 
 }
+
 .button_message, .button_send{
     position: absolute;
     width: 100%;
