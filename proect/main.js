@@ -13,7 +13,7 @@ let thead = document.createElement('thead');
 table.appendChild(thead);
 createRow(thead, Object.keys(array[0]), 'header');
 
-// создаем ряды
+// создаем ряды и поменяли цвет
 array.forEach(arrElement => {
  createRow(table, Object.values(arrElement), 'row');
 });
