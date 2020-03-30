@@ -2,6 +2,26 @@ ul {
     list-style-type: none;
 }
 
+li {
+    display:inline-block;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 2px solid #000000;
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
 .list {
     margin: 0;
     list-style: none;
@@ -29,4 +49,9 @@ ul {
 
 .active {
     color: orange;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
 }
