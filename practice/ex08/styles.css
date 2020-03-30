@@ -22,3 +22,11 @@ ul {
 .arrow.open::before {
     content: '▼ ';
 }
+
+.btn {
+    cursor: pointer;
+}
+
+.active {
+    color: orange;
+}

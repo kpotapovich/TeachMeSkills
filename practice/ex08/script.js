@@ -109,6 +109,7 @@ let qaDeptHead = {
 function buildMenu(currentItem, parent) {
     let arrow = document.createElement('span');
     let text = document.createElement('span');
+    text.classList.add('btn');
     text.innerText = currentItem.name;
 
     let menuItem = document.createElement('li');
@@ -123,7 +124,6 @@ function buildMenu(currentItem, parent) {
         newList.classList.add('list');
         menuItem.appendChild(newList);
         arrow.onclick = (e) => {
-            console.log(e);
             if (arrow  === e.target) {
                 arrow.classList.toggle('open');
                 newList.classList.toggle('open');
@@ -137,3 +137,14 @@ function buildMenu(currentItem, parent) {
 
 let root = document.getElementById('employees');
 [devDeptHead, qaDeptHead].forEach(item => buildMenu(item, root));
+
+let elements = root.getElementsByClassName('btn');
+for (let i = 0; i < elements.length; i++) {
+    elements[i].onclick = e => {
+        let activeList = root.getElementsByClassName('active');
+        for (let j = 0; j < activeList.length; j++) {
+            activeList[j].classList.remove('active');
+        }
+        e.target.classList.add('active');
+    };
+}
