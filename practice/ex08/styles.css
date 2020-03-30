@@ -13,12 +13,12 @@ ul {
     display: block;
 }
 
-.listItem::before {
+.arrow::before {
     content: '▶ ';
     font-size: 80%;
     color: green;
 }
 
-.listItem.open::before {
+.arrow.open::before {
     content: '▼ ';
 }

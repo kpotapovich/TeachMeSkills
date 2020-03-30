@@ -107,19 +107,25 @@ let qaDeptHead = {
 
 
 function buildMenu(currentItem, parent) {
+    let arrow = document.createElement('span');
+    let text = document.createElement('span');
+    text.innerText = currentItem.name;
+
     let menuItem = document.createElement('li');
-    menuItem.innerText = currentItem.name;
+    menuItem.appendChild(arrow);
+    menuItem.appendChild(text);
+
     parent.appendChild(menuItem);
 
     if (currentItem.dept_units.length > 0) {
-        menuItem.classList.add('listItem');
+        arrow.classList.add('arrow');
         let newList = document.createElement('ul');
         newList.classList.add('list');
         menuItem.appendChild(newList);
-        menuItem.onclick = (e) => {
+        arrow.onclick = (e) => {
             console.log(e);
-            if (menuItem  === e.target) {
-                menuItem.classList.toggle('open');
+            if (arrow  === e.target) {
+                arrow.classList.toggle('open');
                 newList.classList.toggle('open');
             }
         };
@@ -127,6 +133,7 @@ function buildMenu(currentItem, parent) {
         currentItem.dept_units.forEach(child => buildMenu(child, newList))
     }
 }
+
 
 let root = document.getElementById('employees');
 [devDeptHead, qaDeptHead].forEach(item => buildMenu(item, root));
