@@ -110,6 +110,7 @@ function buildMenu(currentItem, parent) {
     let arrow = document.createElement('span');
     let text = document.createElement('span');
     text.classList.add('btn');
+    text.classList.add('table');
     text.innerText = currentItem.name;
 
     let menuItem = document.createElement('li');
@@ -148,3 +149,22 @@ for (let i = 0; i < elements.length; i++) {
         e.target.classList.add('active');
     };
 }
+
+let board = document.getElementById('board');
+
+employeers.forEach(employee => {
+    let id = document.createElement('td');
+    id.innerText = employee.id;
+    let name = document.createElement('td');
+    name.innerText = employee.name;
+    let phone = document.createElement('td');
+    phone.innerText = employee.tel;
+    let salary = document.createElement('td');
+    salary.innerText = employee.salary;
+    let row = document.createElement('tr');
+    row.appendChild(id);
+    row.appendChild(name);
+    row.appendChild(phone);
+    row.appendChild(salary);
+    board.appendChild(row);
+});
