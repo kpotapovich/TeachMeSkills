@@ -13,11 +13,3 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
-
-tr.header {
-    font-weight: bold;
-}
-
-tr.row {
-    color: indigo;
-}

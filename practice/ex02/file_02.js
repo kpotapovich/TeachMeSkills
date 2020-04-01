@@ -31,7 +31,6 @@ function createRow(parent, arr, trClass) {
  });
 }
 
-
-
-
+let but = document.getElementById('but');
+ let pEl = document.getElementById('paragrach');
 
