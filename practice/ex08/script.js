@@ -168,3 +168,9 @@ employeers.forEach(employee => {
     row.appendChild(salary);
     board.appendChild(row);
 });
+
+// fetch(`0_departmen.json`)
+// .then(res =>res.json());
+// .then(data => {
+//     console.log(data);
+// });
