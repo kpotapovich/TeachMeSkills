@@ -57,13 +57,13 @@ obj1.getName();
 
 function flower(name) {
     this.name = name;
- this.setName = function (value) {
-    if (_name){
-        return
-    }
-   _name = value;
- };
-
+    this.setName = function (value) {
+        if (_name) {
+            return
+        }
+        _name = value;
+    };
+}
 
 let nameAs = { age:20,
     func: function () {
