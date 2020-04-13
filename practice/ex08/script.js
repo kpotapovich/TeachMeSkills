@@ -110,6 +110,7 @@ function buildMenu(currentItem, parent) {
     let arrow = document.createElement('span');
     let text = document.createElement('span');
     text.classList.add('btn');
+    text.setAttribute('unit_id', currentItem.id);
     text.classList.add('table');
     text.innerText = currentItem.name;
 
@@ -135,7 +136,7 @@ function buildMenu(currentItem, parent) {
     }
 }
 
-
+let board = document.getElementById('board');
 let root = document.getElementById('employees');
 [devDeptHead, qaDeptHead].forEach(item => buildMenu(item, root));
 
@@ -147,27 +148,38 @@ for (let i = 0; i < elements.length; i++) {
             activeList[j].classList.remove('active');
         }
         e.target.classList.add('active');
+        updateTable(board, employeers.filter(employee => employee.dept_unit_id === parseInt(e.target.getAttribute('unit_id'))))
     };
 }
 
-let board = document.getElementById('board');
 
-employeers.forEach(employee => {
-    let id = document.createElement('td');
-    id.innerText = employee.id;
-    let name = document.createElement('td');
-    name.innerText = employee.name;
-    let phone = document.createElement('td');
-    phone.innerText = employee.tel;
-    let salary = document.createElement('td');
-    salary.innerText = employee.salary;
-    let row = document.createElement('tr');
-    row.appendChild(id);
-    row.appendChild(name);
-    row.appendChild(phone);
-    row.appendChild(salary);
-    board.appendChild(row);
-});
+
+updateTable(board, employeers);
+
+function updateTable(table, employees) {
+    //clean table
+    while (table.childElementCount > 1) {
+        table.lastChild.remove();
+    }
+
+    //fill table
+    employees.forEach(employee => {
+        let id = document.createElement('td');
+        id.innerText = employee.id;
+        let name = document.createElement('td');
+        name.innerText = employee.name;
+        let phone = document.createElement('td');
+        phone.innerText = employee.tel;
+        let salary = document.createElement('td');
+        salary.innerText = employee.salary;
+        let row = document.createElement('tr');
+        row.appendChild(id);
+        row.appendChild(name);
+        row.appendChild(phone);
+        row.appendChild(salary);
+        table.appendChild(row);
+    });
+}
 
 // fetch(`0_departmen.json`)
 // .then(res =>res.json());
