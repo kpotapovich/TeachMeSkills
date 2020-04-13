@@ -9,7 +9,7 @@ li {
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    width: 70%;
 }
 
 td, th {
@@ -54,4 +54,15 @@ tr:nth-child(even) {
 .container {
     display: flex;
     justify-content: space-around;
+}
+button {
+    height: 30px;
+    width: 150px;
+    margin: 20px;
+}
+
+
+.currency {
+    height: 30px;
+    margin: 20px;
 }

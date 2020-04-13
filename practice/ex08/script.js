@@ -104,7 +104,56 @@ let qaDeptHead = {
     dept_units: [qaLead]
 };
 
+//-------------------------------
+let board = document.getElementById('board');
+let root = document.getElementById('employees');
+let elements = root.getElementsByClassName('btn');
 
+let unitId = null;
+let rate = 1;
+
+[devDeptHead, qaDeptHead].forEach(item => buildMenu(item, root));
+
+for (let i = 0; i < elements.length; i++) {
+    elements[i].onclick = e => {
+        let activeList = root.getElementsByClassName('active');
+        for (let j = 0; j < activeList.length; j++) {
+            activeList[j].classList.remove('active');
+        }
+        e.target.classList.add('active');
+        unitId = parseInt(e.target.getAttribute('unit_id'));
+        updateTable();
+    };
+}
+
+document.getElementById('clear-list').onclick = () => {
+    let activeList = root.getElementsByClassName('active');
+    for (let j = 0; j < activeList.length; j++) {
+        activeList[j].classList.remove('active');
+    }
+    unitId = null;
+    updateTable();
+};
+
+const selectOption = document.getElementsByClassName('currency')[0];
+selectOption.onchange = () => {
+    let curId = parseInt(selectOption.options[selectOption.selectedIndex].getAttribute('value'));
+    if (curId === 0) {
+        rate = 1;
+        updateTable();
+    } else {
+        fetch(`http://www.nbrb.by/api/exrates/rates/${curId}`)
+            .then(response => response.json())
+            .then(currency => {
+                console.log(currency);
+                rate = currency.Cur_Scale / currency.Cur_OfficialRate;
+                updateTable();
+            });
+    }
+
+};
+
+//-------------------------------
 
 function buildMenu(currentItem, parent) {
     let arrow = document.createElement('span');
@@ -136,30 +185,13 @@ function buildMenu(currentItem, parent) {
     }
 }
 
-let board = document.getElementById('board');
-let root = document.getElementById('employees');
-[devDeptHead, qaDeptHead].forEach(item => buildMenu(item, root));
+function updateTable() {
+    let board = document.getElementById('board');
+    let employees = unitId == null ? [] : employeers.filter(e => e.dept_unit_id === unitId);
 
-let elements = root.getElementsByClassName('btn');
-for (let i = 0; i < elements.length; i++) {
-    elements[i].onclick = e => {
-        let activeList = root.getElementsByClassName('active');
-        for (let j = 0; j < activeList.length; j++) {
-            activeList[j].classList.remove('active');
-        }
-        e.target.classList.add('active');
-        updateTable(board, employeers.filter(employee => employee.dept_unit_id === parseInt(e.target.getAttribute('unit_id'))))
-    };
-}
-
-
-
-updateTable(board, employeers);
-
-function updateTable(table, employees) {
     //clean table
-    while (table.childElementCount > 1) {
-        table.lastChild.remove();
+    while (board.childElementCount > 1) {
+        board.lastChild.remove();
     }
 
     //fill table
@@ -171,18 +203,12 @@ function updateTable(table, employees) {
         let phone = document.createElement('td');
         phone.innerText = employee.tel;
         let salary = document.createElement('td');
-        salary.innerText = employee.salary;
+        salary.innerText = (employee.salary * rate).toFixed(2);
         let row = document.createElement('tr');
         row.appendChild(id);
         row.appendChild(name);
         row.appendChild(phone);
         row.appendChild(salary);
-        table.appendChild(row);
+        board.appendChild(row);
     });
 }
-
-// fetch(`0_departmen.json`)
-// .then(res =>res.json());
-// .then(data => {
-//     console.log(data);
-// });
